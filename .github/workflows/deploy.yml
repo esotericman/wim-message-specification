@@ -30,13 +30,13 @@ jobs:
           node-version: 20
           cache: yarn
           cache-dependency-path: docs/yarn.lock
-          working-directory: ${{ inputs.working-directory }}
+#          working-directory: ${{ inputs.working-directory }}
 
       - name: Install dependencies
         working-directory: ${{ inputs.working-directory }}
         run: yarn install --frozen-lockfile
       - name: Build website
-        working-directory: docs
+        working-directory: ${{ inputs.working-directory }}
         run: yarn build
 
       - name: Upload Build Artifact
