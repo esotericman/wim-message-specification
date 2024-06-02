@@ -27,26 +27,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          working-directory: ${{ inputs.working-directory }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
           cache-dependency-path: docs/yarn.lock
-          working-directory: ${{ inputs.working-directory }}
 
       - name: Install dependencies
-        working-directory: ${{ inputs.working-directory }}
         run: yarn install --frozen-lockfile
       - name: Build website
-        working-directory: ${{ inputs.working-directory }}
         run: yarn build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
-          working-directory: ${{ inputs.working-directory }}
 
   deploy:
     name: Deploy to GitHub Pages
@@ -67,5 +62,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          working-directory: ${{ inputs.working-directory }}
