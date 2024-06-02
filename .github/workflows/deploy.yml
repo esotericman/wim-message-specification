@@ -6,7 +6,12 @@ on:
       - V1
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
-
+  workflow_dispatch:
+    inputs:
+      working-directory:
+        type: string
+        description: docs
+        default: docs
 jobs:
   build:
     name: Build Docusaurus
@@ -24,8 +29,10 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
+        working-directory: ${{ inputs.working-directory }}
         run: yarn install --frozen-lockfile
       - name: Build website
+        working-directory: ${{ inputs.working-directory }}
         run: yarn build
 
       - name: Upload Build Artifact
