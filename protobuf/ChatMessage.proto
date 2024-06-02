@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "ChatClient.proto";
+option java_multiple_files = true;
+option java_package = "org.flmelody.wim.message";
+// 聊天消息
+message ChatMessage{
+  string conversation = 1; // 会话id
+  string random = 2; // 该会话内消息唯一随机数
+  uint64 seq = 3; // 该消息seq,客户端无需设置,回发消息有返回
+  string from = 4; //发送人
+  string to = 5; // 接收人
+  string content = 6; // 消息体
+  bool withdraw = 7; // 消息是否被撤回  当存在同一seq时需比对最新收到的是否为撤回消息
+  google.protobuf.Timestamp timestamp = 8; // 发包时间
+  ChatClient client = 9; // 客户端类型
+}

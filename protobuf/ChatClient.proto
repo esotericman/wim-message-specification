@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.flmelody.wim.message";
+// 客户端类型
+enum ChatClient{
+  UNKNOWN = 0;
+  // 手机端
+  MOBILE = 1;
+  // 桌面端
+  DESKTOP = 2;
+  // IPAD端
+  IPAD = 3;
+}

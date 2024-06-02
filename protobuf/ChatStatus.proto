@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.flmelody.wim.message";
+// 聊天消息响应状态
+enum ChatStatus{
+  OK = 0; // 发送成功
+  QUIET = 1; // 被禁言
+  BLACK = 2; // 被拉黑
+}

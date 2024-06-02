@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "ChatClient.proto";
+option java_multiple_files = true;
+option java_package = "org.flmelody.wim.message";
+// 客户端收到消息后回复确认包
+message ChatAck{
+  string conversation = 1; // 会话id
+  string from = 2; // 消息发送人
+  uint64 seq = 3; // 收到消息的seq
+  ChatClient client = 4; // 客户端类型
+}

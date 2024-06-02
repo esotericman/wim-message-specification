@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "ChatStatus.proto";
+option java_multiple_files = true;
+option java_package = "org.flmelody.wim.message";
+// 聊天响应
+message ChatResponse{
+  string conversation = 1; // 会话id
+  string random = 2; // 该会话内消息唯一随机数
+  uint64 seq = 3; // 消息seq
+  google.protobuf.Timestamp timestamp = 4; // 发包时间
+  ChatStatus chatStatus = 5; //消息发送状态
+
+}
