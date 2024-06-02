@@ -19,7 +19,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./docs
+        working-directory: ${{ inputs.working-directory }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,7 +30,7 @@ jobs:
           node-version: 20
           cache: yarn
           cache-dependency-path: docs/yarn.lock
-#          working-directory: ${{ inputs.working-directory }}
+          working-directory: ${{ inputs.working-directory }}
 
       - name: Install dependencies
         working-directory: ${{ inputs.working-directory }}
