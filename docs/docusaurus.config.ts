@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
     title: 'Wim-SR',
     tagline: 'Dinosaurs are cool',
-    favicon: 'img/favicon.ico',
+    favicon: 'img/wim.ico',
 
     // Set the production url of your site here
     url: 'https://wim-sr.flmelody.org',
@@ -62,7 +62,7 @@ const config: Config = {
             title: 'Wim-SR',
             logo: {
                 alt: 'My Site Logo',
-                src: 'img/logo.svg',
+                src: 'img/wim.svg',
             },
             items: [
                 {
