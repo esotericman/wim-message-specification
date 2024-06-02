@@ -11,14 +11,14 @@ on:
       working-directory:
         type: string
         description: docs
-        default: 'docs'
+        default: docs
 jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 'docs'
+        working-directory: docs
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,7 +35,7 @@ jobs:
         working-directory: ${{ inputs.working-directory }}
         run: yarn install --frozen-lockfile
       - name: Build website
-        working-directory: ${{ inputs.working-directory }}
+#        working-directory: ${{ inputs.working-directory }}
         run: yarn build
 
       - name: Upload Build Artifact
