@@ -35,10 +35,8 @@ jobs:
         working-directory: ${{ inputs.working-directory }}
         run: yarn install --frozen-lockfile
       - name: Build website
-        working-directory: ${{ inputs.working-directory }}
         run: yarn build
-        with:
-          working-directory: ${{ inputs.working-directory }}
+        working-directory: ${{ inputs.working-directory }}
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
