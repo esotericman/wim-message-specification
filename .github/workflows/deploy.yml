@@ -27,9 +27,9 @@ jobs:
           working-directory: ${{ inputs.working-directory }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-#          cache: yarn
-#          cache-dependency-path: docs/yarn.lock
+          node-version: 20
+          cache: yarn
+          cache-dependency-path: docs/yarn.lock
           working-directory: ${{ inputs.working-directory }}
 
       - name: Install dependencies
