@@ -11,7 +11,7 @@ on:
       working-directory:
         type: string
         description: docs
-        default: docs
+        default: ./docs
 jobs:
   build:
     name: Build Docusaurus
@@ -36,7 +36,7 @@ jobs:
         working-directory: ${{ inputs.working-directory }}
         run: yarn install --frozen-lockfile
       - name: Build website
-#        working-directory: ${{ inputs.working-directory }}
+        working-directory: ${{ inputs.working-directory }}
         run: yarn build
 
       - name: Upload Build Artifact
