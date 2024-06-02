@@ -12,6 +12,9 @@ on:
         type: string
         description: docs
         default: docs
+defaults:
+  run:
+    working-directory: docs
 jobs:
   build:
     name: Build Docusaurus
