@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     to_ = "";
     content_ = "";
     client_ = 0;
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -115,6 +116,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             client_ = rawValue;
+            break;
+          }
+          case 80: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
             break;
           }
           default: {
@@ -474,6 +481,33 @@ private static final long serialVersionUID = 0L;
     return result == null ? org.flmelody.wim.message.ChatClient.UNRECOGNIZED : result;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 10;
+  private int type_;
+  /**
+   * <pre>
+   * 聊天类型
+   * </pre>
+   *
+   * <code>.ChatType type = 10;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <pre>
+   * 聊天类型
+   * </pre>
+   *
+   * <code>.ChatType type = 10;</code>
+   * @return The type.
+   */
+  @java.lang.Override public org.flmelody.wim.message.ChatType getType() {
+    @SuppressWarnings("deprecation")
+    org.flmelody.wim.message.ChatType result = org.flmelody.wim.message.ChatType.valueOf(type_);
+    return result == null ? org.flmelody.wim.message.ChatType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -515,6 +549,9 @@ private static final long serialVersionUID = 0L;
     if (client_ != org.flmelody.wim.message.ChatClient.UNKNOWN.getNumber()) {
       output.writeEnum(9, client_);
     }
+    if (type_ != org.flmelody.wim.message.ChatType.SINGLE.getNumber()) {
+      output.writeEnum(10, type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -555,6 +592,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, client_);
     }
+    if (type_ != org.flmelody.wim.message.ChatType.SINGLE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -590,6 +631,7 @@ private static final long serialVersionUID = 0L;
           .equals(other.getTimestamp())) return false;
     }
     if (client_ != other.client_) return false;
+    if (type_ != other.type_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -623,6 +665,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CLIENT_FIELD_NUMBER;
     hash = (53 * hash) + client_;
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -782,6 +826,8 @@ private static final long serialVersionUID = 0L;
       }
       client_ = 0;
 
+      type_ = 0;
+
       return this;
     }
 
@@ -821,6 +867,7 @@ private static final long serialVersionUID = 0L;
         result.timestamp_ = timestampBuilder_.build();
       }
       result.client_ = client_;
+      result.type_ = type_;
       onBuilt();
       return result;
     }
@@ -900,6 +947,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.client_ != 0) {
         setClientValue(other.getClientValue());
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1721,6 +1771,80 @@ private static final long serialVersionUID = 0L;
     public Builder clearClient() {
       
       client_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     * <pre>
+     * 聊天类型
+     * </pre>
+     *
+     * <code>.ChatType type = 10;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * 聊天类型
+     * </pre>
+     *
+     * <code>.ChatType type = 10;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 聊天类型
+     * </pre>
+     *
+     * <code>.ChatType type = 10;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public org.flmelody.wim.message.ChatType getType() {
+      @SuppressWarnings("deprecation")
+      org.flmelody.wim.message.ChatType result = org.flmelody.wim.message.ChatType.valueOf(type_);
+      return result == null ? org.flmelody.wim.message.ChatType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * 聊天类型
+     * </pre>
+     *
+     * <code>.ChatType type = 10;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(org.flmelody.wim.message.ChatType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 聊天类型
+     * </pre>
+     *
+     * <code>.ChatType type = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
       onChanged();
       return this;
     }

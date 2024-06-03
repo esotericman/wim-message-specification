@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'ChatClient.pbenum.dart' as $1;
+import 'ChatType.pbenum.dart' as $2;
 import 'google/protobuf/timestamp.pb.dart' as $0;
 
 /// 聊天消息
@@ -29,6 +30,7 @@ class ChatMessage extends $pb.GeneratedMessage {
     $core.bool? withdraw,
     $0.Timestamp? timestamp,
     $1.ChatClient? client,
+    $2.ChatType? type,
   }) {
     final $result = create();
     if (conversation != null) {
@@ -58,6 +60,9 @@ class ChatMessage extends $pb.GeneratedMessage {
     if (client != null) {
       $result.client = client;
     }
+    if (type != null) {
+      $result.type = type;
+    }
     return $result;
   }
   ChatMessage._() : super();
@@ -74,6 +79,7 @@ class ChatMessage extends $pb.GeneratedMessage {
     ..aOB(7, _omitFieldNames ? '' : 'withdraw')
     ..aOM<$0.Timestamp>(8, _omitFieldNames ? '' : 'timestamp', subBuilder: $0.Timestamp.create)
     ..e<$1.ChatClient>(9, _omitFieldNames ? '' : 'client', $pb.PbFieldType.OE, defaultOrMaker: $1.ChatClient.UNKNOWN, valueOf: $1.ChatClient.valueOf, enumValues: $1.ChatClient.values)
+    ..e<$2.ChatType>(10, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $2.ChatType.SINGLE, valueOf: $2.ChatType.valueOf, enumValues: $2.ChatType.values)
     ..hasRequiredFields = false
   ;
 
@@ -180,6 +186,15 @@ class ChatMessage extends $pb.GeneratedMessage {
   $core.bool hasClient() => $_has(8);
   @$pb.TagNumber(9)
   void clearClient() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $2.ChatType get type => $_getN(9);
+  @$pb.TagNumber(10)
+  set type($2.ChatType v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasType() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearType() => clearField(10);
 }
 
 

@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 import "ChatClient.proto";
+import "ChatType.proto";
 option java_multiple_files = true;
 option java_package = "org.flmelody.wim.message";
 // 聊天消息
@@ -15,4 +16,5 @@ message ChatMessage{
   bool withdraw = 7; // 消息是否被撤回  当存在同一seq时需比对最新收到的是否为撤回消息
   google.protobuf.Timestamp timestamp = 8; // 发包时间
   ChatClient client = 9; // 客户端类型
+  ChatType type = 10; // 聊天类型
 }

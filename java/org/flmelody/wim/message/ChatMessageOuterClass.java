@@ -29,28 +29,31 @@ public final class ChatMessageOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ChatMessage.proto\032\037google/protobuf/tim" +
-      "estamp.proto\032\020ChatClient.proto\"\311\001\n\013ChatM" +
-      "essage\022\024\n\014conversation\030\001 \001(\t\022\016\n\006random\030\002" +
-      " \001(\t\022\013\n\003seq\030\003 \001(\004\022\014\n\004from\030\004 \001(\t\022\n\n\002to\030\005 " +
-      "\001(\t\022\017\n\007content\030\006 \001(\t\022\020\n\010withdraw\030\007 \001(\010\022-" +
-      "\n\ttimestamp\030\010 \001(\0132\032.google.protobuf.Time" +
-      "stamp\022\033\n\006client\030\t \001(\0162\013.ChatClientB\034\n\030or" +
-      "g.flmelody.wim.messageP\001b\006proto3"
+      "estamp.proto\032\020ChatClient.proto\032\016ChatType" +
+      ".proto\"\342\001\n\013ChatMessage\022\024\n\014conversation\030\001" +
+      " \001(\t\022\016\n\006random\030\002 \001(\t\022\013\n\003seq\030\003 \001(\004\022\014\n\004fro" +
+      "m\030\004 \001(\t\022\n\n\002to\030\005 \001(\t\022\017\n\007content\030\006 \001(\t\022\020\n\010" +
+      "withdraw\030\007 \001(\010\022-\n\ttimestamp\030\010 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\033\n\006client\030\t \001(\0162\013." +
+      "ChatClient\022\027\n\004type\030\n \001(\0162\t.ChatTypeB\034\n\030o" +
+      "rg.flmelody.wim.messageP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
           org.flmelody.wim.message.ChatClientOuterClass.getDescriptor(),
+          org.flmelody.wim.message.ChatTypeOuterClass.getDescriptor(),
         });
     internal_static_ChatMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ChatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChatMessage_descriptor,
-        new java.lang.String[] { "Conversation", "Random", "Seq", "From", "To", "Content", "Withdraw", "Timestamp", "Client", });
+        new java.lang.String[] { "Conversation", "Random", "Seq", "From", "To", "Content", "Withdraw", "Timestamp", "Client", "Type", });
     com.google.protobuf.TimestampProto.getDescriptor();
     org.flmelody.wim.message.ChatClientOuterClass.getDescriptor();
+    org.flmelody.wim.message.ChatTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

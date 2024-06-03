@@ -26,6 +26,7 @@ const ChatMessage$json = {
     {'1': 'withdraw', '3': 7, '4': 1, '5': 8, '10': 'withdraw'},
     {'1': 'timestamp', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timestamp'},
     {'1': 'client', '3': 9, '4': 1, '5': 14, '6': '.ChatClient', '10': 'client'},
+    {'1': 'type', '3': 10, '4': 1, '5': 14, '6': '.ChatType', '10': 'type'},
   ],
 };
 
@@ -35,5 +36,6 @@ final $typed_data.Uint8List chatMessageDescriptor = $convert.base64Decode(
     '5kb20YAiABKAlSBnJhbmRvbRIQCgNzZXEYAyABKARSA3NlcRISCgRmcm9tGAQgASgJUgRmcm9t'
     'Eg4KAnRvGAUgASgJUgJ0bxIYCgdjb250ZW50GAYgASgJUgdjb250ZW50EhoKCHdpdGhkcmF3GA'
     'cgASgIUgh3aXRoZHJhdxI4Cgl0aW1lc3RhbXAYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
-    'ZXN0YW1wUgl0aW1lc3RhbXASIwoGY2xpZW50GAkgASgOMgsuQ2hhdENsaWVudFIGY2xpZW50');
+    'ZXN0YW1wUgl0aW1lc3RhbXASIwoGY2xpZW50GAkgASgOMgsuQ2hhdENsaWVudFIGY2xpZW50Eh'
+    '0KBHR5cGUYCiABKA4yCS5DaGF0VHlwZVIEdHlwZQ==');
 

@@ -34,6 +34,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
 #include "ChatClient.pb.h"
+#include "ChatType.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_ChatMessage_2eproto
@@ -187,6 +188,7 @@ class ChatMessage PROTOBUF_FINAL :
     kSeqFieldNumber = 3,
     kWithdrawFieldNumber = 7,
     kClientFieldNumber = 9,
+    kTypeFieldNumber = 10,
   };
   // string conversation = 1;
   void clear_conversation();
@@ -358,6 +360,15 @@ class ChatMessage PROTOBUF_FINAL :
   void _internal_set_client(::ChatClient value);
   public:
 
+  // .ChatType type = 10;
+  void clear_type();
+  ::ChatType type() const;
+  void set_type(::ChatType value);
+  private:
+  ::ChatType _internal_type() const;
+  void _internal_set_type(::ChatType value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ChatMessage)
  private:
   class _Internal;
@@ -374,6 +385,7 @@ class ChatMessage PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint64 seq_;
   bool withdraw_;
   int client_;
+  int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ChatMessage_2eproto;
 };
@@ -926,6 +938,26 @@ inline void ChatMessage::_internal_set_client(::ChatClient value) {
 inline void ChatMessage::set_client(::ChatClient value) {
   _internal_set_client(value);
   // @@protoc_insertion_point(field_set:ChatMessage.client)
+}
+
+// .ChatType type = 10;
+inline void ChatMessage::clear_type() {
+  type_ = 0;
+}
+inline ::ChatType ChatMessage::_internal_type() const {
+  return static_cast< ::ChatType >(type_);
+}
+inline ::ChatType ChatMessage::type() const {
+  // @@protoc_insertion_point(field_get:ChatMessage.type)
+  return _internal_type();
+}
+inline void ChatMessage::_internal_set_type(::ChatType value) {
+  
+  type_ = value;
+}
+inline void ChatMessage::set_type(::ChatType value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:ChatMessage.type)
 }
 
 #ifdef __GNUC__

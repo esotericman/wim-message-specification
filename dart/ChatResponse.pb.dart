@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'ChatStatus.pbenum.dart' as $2;
+import 'ChatStatus.pbenum.dart' as $3;
 import 'google/protobuf/timestamp.pb.dart' as $0;
 
 /// 聊天响应
@@ -24,7 +24,7 @@ class ChatResponse extends $pb.GeneratedMessage {
     $core.String? random,
     $fixnum.Int64? seq,
     $0.Timestamp? timestamp,
-    $2.ChatStatus? chatStatus,
+    $3.ChatStatus? chatStatus,
   }) {
     final $result = create();
     if (conversation != null) {
@@ -53,7 +53,7 @@ class ChatResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'random')
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'seq', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<$0.Timestamp>(4, _omitFieldNames ? '' : 'timestamp', subBuilder: $0.Timestamp.create)
-    ..e<$2.ChatStatus>(5, _omitFieldNames ? '' : 'chatStatus', $pb.PbFieldType.OE, protoName: 'chatStatus', defaultOrMaker: $2.ChatStatus.OK, valueOf: $2.ChatStatus.valueOf, enumValues: $2.ChatStatus.values)
+    ..e<$3.ChatStatus>(5, _omitFieldNames ? '' : 'chatStatus', $pb.PbFieldType.OE, protoName: 'chatStatus', defaultOrMaker: $3.ChatStatus.OK, valueOf: $3.ChatStatus.valueOf, enumValues: $3.ChatStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -117,9 +117,9 @@ class ChatResponse extends $pb.GeneratedMessage {
   $0.Timestamp ensureTimestamp() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $2.ChatStatus get chatStatus => $_getN(4);
+  $3.ChatStatus get chatStatus => $_getN(4);
   @$pb.TagNumber(5)
-  set chatStatus($2.ChatStatus v) { setField(5, v); }
+  set chatStatus($3.ChatStatus v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasChatStatus() => $_has(4);
   @$pb.TagNumber(5)

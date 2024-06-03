@@ -172,4 +172,23 @@ public interface ChatMessageOrBuilder extends
    * @return The client.
    */
   org.flmelody.wim.message.ChatClient getClient();
+
+  /**
+   * <pre>
+   * 聊天类型
+   * </pre>
+   *
+   * <code>.ChatType type = 10;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <pre>
+   * 聊天类型
+   * </pre>
+   *
+   * <code>.ChatType type = 10;</code>
+   * @return The type.
+   */
+  org.flmelody.wim.message.ChatType getType();
 }

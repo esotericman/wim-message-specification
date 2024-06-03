@@ -53,6 +53,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_ChatMessage_2eproto::offsets[]
   PROTOBUF_FIELD_OFFSET(::ChatMessage, withdraw_),
   PROTOBUF_FIELD_OFFSET(::ChatMessage, timestamp_),
   PROTOBUF_FIELD_OFFSET(::ChatMessage, client_),
+  PROTOBUF_FIELD_OFFSET(::ChatMessage, type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ChatMessage)},
@@ -64,16 +65,18 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_ChatMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021ChatMessage.proto\032\037google/protobuf/tim"
-  "estamp.proto\032\020ChatClient.proto\"\311\001\n\013ChatM"
-  "essage\022\024\n\014conversation\030\001 \001(\t\022\016\n\006random\030\002"
-  " \001(\t\022\013\n\003seq\030\003 \001(\004\022\014\n\004from\030\004 \001(\t\022\n\n\002to\030\005 "
-  "\001(\t\022\017\n\007content\030\006 \001(\t\022\020\n\010withdraw\030\007 \001(\010\022-"
-  "\n\ttimestamp\030\010 \001(\0132\032.google.protobuf.Time"
-  "stamp\022\033\n\006client\030\t \001(\0162\013.ChatClientB\034\n\030or"
-  "g.flmelody.wim.messageP\001b\006proto3"
+  "estamp.proto\032\020ChatClient.proto\032\016ChatType"
+  ".proto\"\342\001\n\013ChatMessage\022\024\n\014conversation\030\001"
+  " \001(\t\022\016\n\006random\030\002 \001(\t\022\013\n\003seq\030\003 \001(\004\022\014\n\004fro"
+  "m\030\004 \001(\t\022\n\n\002to\030\005 \001(\t\022\017\n\007content\030\006 \001(\t\022\020\n\010"
+  "withdraw\030\007 \001(\010\022-\n\ttimestamp\030\010 \001(\0132\032.goog"
+  "le.protobuf.Timestamp\022\033\n\006client\030\t \001(\0162\013."
+  "ChatClient\022\027\n\004type\030\n \001(\0162\t.ChatTypeB\034\n\030o"
+  "rg.flmelody.wim.messageP\001b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ChatMessage_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ChatMessage_2eproto_deps[3] = {
   &::descriptor_table_ChatClient_2eproto,
+  &::descriptor_table_ChatType_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ChatMessage_2eproto_sccs[1] = {
@@ -81,8 +84,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Cha
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ChatMessage_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ChatMessage_2eproto = {
-  false, false, descriptor_table_protodef_ChatMessage_2eproto, "ChatMessage.proto", 312,
-  &descriptor_table_ChatMessage_2eproto_once, descriptor_table_ChatMessage_2eproto_sccs, descriptor_table_ChatMessage_2eproto_deps, 1, 2,
+  false, false, descriptor_table_protodef_ChatMessage_2eproto, "ChatMessage.proto", 353,
+  &descriptor_table_ChatMessage_2eproto_once, descriptor_table_ChatMessage_2eproto_sccs, descriptor_table_ChatMessage_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_ChatMessage_2eproto::offsets,
   file_level_metadata_ChatMessage_2eproto, 1, file_level_enum_descriptors_ChatMessage_2eproto, file_level_service_descriptors_ChatMessage_2eproto,
 };
@@ -151,8 +154,8 @@ ChatMessage::ChatMessage(const ChatMessage& from)
     timestamp_ = nullptr;
   }
   ::memcpy(&seq_, &from.seq_,
-    static_cast<size_t>(reinterpret_cast<char*>(&client_) -
-    reinterpret_cast<char*>(&seq_)) + sizeof(client_));
+    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&seq_)) + sizeof(type_));
   // @@protoc_insertion_point(copy_constructor:ChatMessage)
 }
 
@@ -164,8 +167,8 @@ void ChatMessage::SharedCtor() {
   to_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&client_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(client_));
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(type_));
 }
 
 ChatMessage::~ChatMessage() {
@@ -215,8 +218,8 @@ void ChatMessage::Clear() {
   }
   timestamp_ = nullptr;
   ::memset(&seq_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&client_) -
-      reinterpret_cast<char*>(&seq_)) + sizeof(client_));
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&seq_)) + sizeof(type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -300,6 +303,14 @@ const char* ChatMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_client(static_cast<::ChatClient>(val));
+        } else goto handle_unusual;
+        continue;
+      // .ChatType type = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::ChatType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -407,6 +418,13 @@ failure:
       9, this->_internal_client(), target);
   }
 
+  // .ChatType type = 10;
+  if (this->type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      10, this->_internal_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -483,6 +501,12 @@ size_t ChatMessage::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_client());
   }
 
+  // .ChatType type = 10;
+  if (this->type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -541,6 +565,9 @@ void ChatMessage::MergeFrom(const ChatMessage& from) {
   if (from.client() != 0) {
     _internal_set_client(from._internal_client());
   }
+  if (from.type() != 0) {
+    _internal_set_type(from._internal_type());
+  }
 }
 
 void ChatMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -570,8 +597,8 @@ void ChatMessage::InternalSwap(ChatMessage* other) {
   to_.Swap(&other->to_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   content_.Swap(&other->content_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ChatMessage, client_)
-      + sizeof(ChatMessage::client_)
+      PROTOBUF_FIELD_OFFSET(ChatMessage, type_)
+      + sizeof(ChatMessage::type_)
       - PROTOBUF_FIELD_OFFSET(ChatMessage, timestamp_)>(
           reinterpret_cast<char*>(&timestamp_),
           reinterpret_cast<char*>(&other->timestamp_));
